@@ -1,0 +1,128 @@
+@import "lib/vars"
+@import "lib/reboot"
+@import "lib/type"
+
+h1
+    text-align: center
+
+#caja
+    height: 500px
+    width: auto
+    display: flex
+    margin: 0 auto
+    padding-bottom: 1rem
+
+.mini
+    width: 70px
+    margin: 2px
+    cursor: pointer
+    &:hover
+        transform: scale(1.2)
+        transition: .3s ease-in-out
+
+.caja_mini
+    display: flex
+    justify-content: center
+    margin: 20px
+
+.theme_dark
+    background-color: $negro
+    color: $blanco
+    a
+        color: $amarillo
+        &:hover
+            darken($amarillo, 10%)
+
+.basic_theme
+    background-color: $body_bg
+    color: $body_color
+    a
+        color: $link_color
+        &:hover
+            darken($link_color, 10%)
+
+.theme_red
+    background-color: #fd4141
+    color: $blanco
+    a
+        color: $gris
+        &:hover
+            darken($gris, 10%)  
+
+.icon
+    width: 30px
+    cursor: pointer
+nav
+    flex: 1
+    text-align: right
+    padding: 1.5em
+
+.hover_img
+    text-align: center
+    transition: .3s ease-in-out
+    &:hover
+        .hover_text
+            opacity: 100%
+    
+.hover_text
+    opacity: 0
+    position: absolute
+    z-index: 100
+    color: $blanco
+    background-color: $negro
+    border-radius: 0 0 10px 0
+    padding: .5rem
+    transition: .3s ease-in-out
+
+.carrousel
+    display: flex
+    align-items: center
+    position: relative
+    width: 500px
+    height: auto
+    margin: 0 auto
+    overflow: hidden
+    .carrousel_images
+        display: flex
+        width: 100%
+        height: 100%
+        transform: translateX(0)
+        transition: transform 0.25s
+        div
+            width: 500px
+            height: auto
+            padding: 2rem
+            img
+                width: 100%
+                height: 100%
+
+.flecha
+    width: 20px
+    height: 20px
+    margin: 0 auto
+    cursor: pointer
+    z-index: 19
+    &:hover
+        opacity: 0.5
+
+#der
+    position: absolute
+    right: 0
+
+#izq
+    position: absolute
+    left: 0
+
+@media screen and (max-width: 800px)
+    #der
+        right: 30px
+    #izq
+        left: 30px
+    .flecha
+        width: 40px
+        height: 40px
+        margin: 0
+    .caja_mini
+        display: none
+    .hover_text
+        font-size: 1.5rem
